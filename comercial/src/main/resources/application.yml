@@ -1,0 +1,23 @@
+spring:
+  datasource: 
+      jndi-name: java:/dsComercial
+      jdbcUrl: jdbc:mysql://localhost:3306/comercial?serverTimezone=UTC 
+      driverClassName: com.mysql.jdbc.Driver
+      username: root
+      password: mysql
+  jpa:
+    show-sql: true
+    hibernate:
+      #ddl-auto: Update   
+      hbm2ddl: Update
+    properties: 
+      hibernate: 
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  
+logging:
+  file: application.log
+ 
+#    driverClassName: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/comercial
+#    username: root
+#    password: mysql 
