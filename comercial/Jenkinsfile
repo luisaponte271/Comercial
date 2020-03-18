@@ -19,8 +19,8 @@ node {
 	   {
 	     
 		//bat "cd ${JENKINS_WORKSPACE}/${APP_NAME}"
-		bat "cd comercial"
-		bat "mvn clean package -DskipTests"
+		powershell "cd comercial"
+		powershell "mvn clean package -DskipTests"
 		//bat "call ${ARCHIVO_BATCH}"
 		
 		println("compilando")
