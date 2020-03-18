@@ -18,7 +18,7 @@ node {
 	   stage('Compilando con Maven')
 	   {
 	   
-	   dir(APP_NAME) {
+	   dir(comercial) {
 			bat "mvn clean package -DskipTests"
 		}
 	     
