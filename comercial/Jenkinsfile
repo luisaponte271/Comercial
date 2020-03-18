@@ -1,4 +1,8 @@
 #!groovy? 
+def NAME_PROJECT_JENKINS = '/comercial-app';
+def NAME_JOB_JENKINS = '/comercial-backend';
+def NAME_APP = '/comercial';
+
 
 node {
   
@@ -8,9 +12,8 @@ node {
 	  
 	   stage('Compilando con Maven')
 	   {
-		def prueba = bat "chdir"
-		println("esto es una prueba")
-		println(prueba)
+	    println("%JENKINS_WORKSPACE%${NAME_PROJECT_JENKINS}${NAME_JOB_JENKINS}${NAME_APP}")
+		//bat "%JENKINS_WORKSPACE%${NAME_PROJECT_JENKINS}${NAME_JOB_JENKINS}${NAME_APP}" 
 		
 		println("compilando")
 	   }
