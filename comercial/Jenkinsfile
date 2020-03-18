@@ -3,7 +3,7 @@ def jboss_prod_host = 'localhost:9990';
 def jboss_prod_admin_user = 'admin';
 def jboss_prod_admin_password = 'admin';
 def aplicacion_compiler = 'comercial.war';
-def jboss_prod_ruta = 'C:/Users/usuario/Desktop/Luis Aponte/Servidores/bin/client/'
+def jboss_prod_ruta = 'C:/Users/usuario/Desktop/LuisAponte/Servidores/bin/client/'
 
 node {
   
@@ -24,7 +24,7 @@ node {
 	   stage('Deployment en JBOSS') {	
 	    dir('target') { 
 			
-			 bat 'cd C:/Users/usuario/Desktop/Luis Aponte/Servidores/bin/client/' 
+			 bat 'cd C:/Users/usuario/Desktop/LuisAponte/Servidores/bin/client/' 
 			 println("ruta");
 			 bat "chdir";
 			}
