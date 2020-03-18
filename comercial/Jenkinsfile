@@ -1,21 +1,20 @@
 #!groovy? 
-node {
-    //agent any
-    //triggers { pollSCM('* * * * *') }
-  
- 
-				 stage('Descargar Fuentes') { 
-					  checkout scm
-				   }     
-				  
-				   stage('Compilando con Maven')
-				   {
-					println("compilando")
-				   }
 
-				   stage('Deployment en JBOSS') {
-				   
-				   println("desplegando")
+node {
+  
+	   stage('Descargar Fuentes') { 
+		  checkout scm
+	   }     
+	  
+	   stage('Compilando con Maven')
+	   {
+		sh "chdir"
+		println("compilando")
+	   }
+
+	   stage('Deployment en JBOSS') {
+	   
+	   println("desplegando")
 						
 	 	
 	}
