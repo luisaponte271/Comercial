@@ -1,7 +1,9 @@
 #!groovy? 
- node{
- 				 triggers { pollSCM('* * * * *') }
- 				
+pipeline {
+    agent any
+    triggers { pollSCM('* * * * *') }
+    stages {
+ 
 				 stage('Descargar Fuentes') { 
 					  checkout scm
 				   }     
@@ -17,4 +19,5 @@
 						
 		}	
 					
+	}
 }
