@@ -2,7 +2,7 @@
 //def NAME_PROJECT_JENKINS = 'comercial-app';
 //def NAME_JOB_JENKINS = 'comercial-backend';
 //def NAME_APP = 'comercial';
-def NAME = 'comercial-app\\comercial-backend\\comercial';
+String NAME = 'comercial-app\\comercial-backend\\comercial';
 
 node {
   
