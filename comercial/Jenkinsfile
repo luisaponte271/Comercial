@@ -8,7 +8,7 @@ pipeline {
 					  checkout scm
 				   }     
 				  
-				   stage('Compilando con maven')
+				   stage('Compilando con Maven')
 				   {
 					println("compilando")
 				   }
