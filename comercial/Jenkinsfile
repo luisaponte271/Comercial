@@ -19,12 +19,10 @@ node {
 	   {
 	   
 	   dir(APP_NAME) {
-			println("compilando")
+			bat "mvn clean package -DskipTests"
 		}
 	     
-		//bat "cd ${JENKINS_WORKSPACE}/${APP_NAME}"
-		//bat "call ${ARCHIVO_BATCH}"
-		
+		  
 		println("compilando2")
 	   }
 
