@@ -2,9 +2,9 @@
 node {
     //agent any
     //triggers { pollSCM('* * * * *') }
-    stages {
+  
  
-				 	stage('Descargar Fuentes') { 
+				 stage('Descargar Fuentes') { 
 					  checkout scm
 				   }     
 				  
@@ -17,7 +17,6 @@ node {
 				   
 				   println("desplegando")
 						
-		}	
-					
+	 	
 	}
 }
