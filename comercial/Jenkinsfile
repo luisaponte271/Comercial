@@ -1,8 +1,8 @@
 #!groovy?  
-jboss-prod-host = 'localhost' 
-jboss-prod-admin-user = admin
-jboss-prod-admin-password = admin
-aplicacion-compiler = comercial.war
+env.jboss-prod-host = 'localhost:9990' 
+env.jboss-prod-admin-user = 'admin'
+env.jboss-prod-admin-password = 'admin'
+env.aplicacion-compiler = 'comercial.war'
 
 node {
   
@@ -24,11 +24,11 @@ node {
 	    dir('target') {
 	    println("actual path")
 		bat "chdir"
-			
-		def jboss-undeploy = "java -jar jboss-cli-client.jar --connect --controller=localhost:9990 --user='admin' --password='admin' --command='undeploy comercial.war'"
+ 
+		def jboss-undeploy = "java -jar jboss-cli-client.jar --connect --controller=${jboss-prod-host} --user=${jboss-prod-admin-user} --password=${jboss-prod-admin-password} --command='undeploy comercial.war'"
 		bat jboss-undeploy                            
 						
-		def jboss-deploy = "java -jar jboss-cli-client.jar --connect --controller=localhost:9990 --user='admin' --password='admin' --command='deploy ../../standalone/deployments/comercial.war --force'"
+		def jboss-deploy = "java -jar jboss-cli-client.jar --connect --controller=${jboss-prod-host} --user=${jboss-prod-admin-user} --password=${jboss-prod-admin-password} --command='deploy ../../standalone/deployments/comercial.war --force'"
 		bat jboss-deploy   
 		 
 		  
