@@ -24,13 +24,13 @@ node {
 	    dir('target') {
 	    println("actual path")
 		bat "chdir"
- 
+		/*
 		def jboss-undeploy = "java -jar jboss-cli-client.jar --connect --controller=${jboss-prod-host} --user=${jboss-prod-admin-user} --password=${jboss-prod-admin-password} --command='undeploy comercial.war'"
 		bat jboss-undeploy                            
 						
 		def jboss-deploy = "java -jar jboss-cli-client.jar --connect --controller=${jboss-prod-host} --user=${jboss-prod-admin-user} --password=${jboss-prod-admin-password} --command='deploy ../../standalone/deployments/comercial.war --force'"
 		bat jboss-deploy   
-		 
+		 */
 		  
 	   } 
 	     
