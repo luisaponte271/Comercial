@@ -25,10 +25,10 @@ node {
 	    println("actual path")
 		bat "chdir"
 			
-		def jboss-undeploy = "java -jar jboss-cli-client.jar --connect --controller=localhost:9990 --user=admin --password=admin --command='undeploy comercial.war'"
+		def jboss-undeploy = "java -jar jboss-cli-client.jar --connect --controller=localhost:9990 --user='admin' --password='admin' --command='undeploy comercial.war'"
 		bat jboss-undeploy                            
 						
-		def jboss-deploy = "java -jar jboss-cli-client.jar --connect --controller=localhost:9990 --user=admin --password=admin --command='deploy ../../standalone/deployments/comercial.war --force'"
+		def jboss-deploy = "java -jar jboss-cli-client.jar --connect --controller=localhost:9990 --user='admin' --password='admin' --command='deploy ../../standalone/deployments/comercial.war --force'"
 		bat jboss-deploy   
 		 
 		  
