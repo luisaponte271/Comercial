@@ -1,8 +1,8 @@
 #!groovy?  
-env.jboss-prod-host = 'localhost:9990' 
-env.jboss-prod-admin-user = 'admin'
-env.jboss-prod-admin-password = 'admin'
-env.aplicacion-compiler = 'comercial.war'
+def jboss-prod-host = 'localhost:9990' 
+def jboss-prod-admin-user = 'admin'
+def jboss-prod-admin-password = 'admin'
+def aplicacion-compiler = 'comercial.war'
 
 node {
   
