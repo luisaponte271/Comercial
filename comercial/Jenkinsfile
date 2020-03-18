@@ -16,7 +16,7 @@ node {
 	    
 		bat "cd ${JENKINS_WORKSPACE}\\${NAME_PROJECT_JENKINS}\\${NAME_JOB_JENKINS}\\${NAME_APP}" 
 		//bat "%JENKINS_WORKSPACE%\\${NAME}" 
-		//bat "mvn clean package -DskipTests"
+		bat "mvn clean package -DskipTests"
 		
 		println("compilando")
 	   }
