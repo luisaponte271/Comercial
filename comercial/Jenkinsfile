@@ -1,9 +1,9 @@
 #!groovy? 
-def JENKINS_WORKSPACE = 'C://Users/usuario/.jenkins/workspace';
-def NAME_PROJECT_JENKINS = 'comercial-app';
-def NAME_JOB_JENKINS = 'comercial-backend';
+def JENKINS_WORKSPACE = 'C://Users/usuario/batch';
+//def NAME_PROJECT_JENKINS = 'comercial-app';
+//def NAME_JOB_JENKINS = 'comercial-backend';
 def NAME_APP = 'comercial';
-//String NAME = 'comercial-app\\comercial-backend\\comercial';
+def ARCHIVO_BATCH = 'compiler-maven.bat'; 
 
 def cmd_exec(command) {
     return bat(returnStdout: true, script: "${command}").trim()
@@ -17,12 +17,9 @@ node {
 	  
 	   stage('Compilando con Maven')
 	   {
-	    
-		//bat "cd ${JENKINS_WORKSPACE}\\${NAME_PROJECT_JENKINS}\\${NAME_JOB_JENKINS}\\${NAME_APP}\\" 
-		cmd_exec('${JENKINS_WORKSPACE}/${NAME_PROJECT_JENKINS}/${NAME_JOB_JENKINS}/${NAME_APP}')
-		
-		//bat "%JENKINS_WORKSPACE%\\${NAME}" 
-		bat "mvn clean package -DskipTests"
+	     
+		cmd_exec('${JENKINS_WORKSPACE}/${NAME_APP}')
+		cmd_exec('call %{ARCHIVO_BATCH}')
 		
 		println("compilando")
 	   }
