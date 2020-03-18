@@ -21,8 +21,9 @@ node {
 	   }
 
 	   stage('Deployment en JBOSS') {	
-	   dir('target') {
-		//bat "MOVE comercial.war ${JBOOS-SERVIDOR}"
+	    dir('target') {
+	    println("actual path")
+		bat "chdir"
 			
 		def jboss-undeploy = "java -jar jboss-cli-client.jar --connect --controller=localhost:9990 --user=admin --password=admin --command='undeploy comercial.war'"
 		bat jboss-undeploy                            
