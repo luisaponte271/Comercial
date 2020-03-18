@@ -1,8 +1,8 @@
 #!groovy?  
-def jboss-prod-host = 'localhost:9990';
-def jboss-prod-admin-user = 'admin';
-def jboss-prod-admin-password = 'admin';
-def aplicacion-compiler = 'comercial.war';
+def jboss_prod_host = 'localhost:9990';
+def jboss_prod_admin_user = 'admin';
+def jboss_prod_admin_password = 'admin';
+def aplicacion_compiler = 'comercial.war';
 
 node {
   
