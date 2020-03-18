@@ -17,13 +17,15 @@ node {
 	  
 	   stage('Compilando con Maven')
 	   {
+	   
+	   dir(APP_NAME) {
+			println("compilando")
+		}
 	     
 		//bat "cd ${JENKINS_WORKSPACE}/${APP_NAME}"
-		powershell "cd comercial"
-		powershell "mvn clean package -DskipTests"
 		//bat "call ${ARCHIVO_BATCH}"
 		
-		println("compilando")
+		println("compilando2")
 	   }
 
 	   stage('Deployment en JBOSS') {	
