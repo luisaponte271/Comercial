@@ -8,7 +8,7 @@ node {
 	  
 	   stage('Compilando con Maven')
 	   {
-		sh "javac -version"
+		bat "javac -version"
 		println("version java")
 		
 		println("compilando")
