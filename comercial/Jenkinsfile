@@ -1,13 +1,8 @@
-#!groovy? 
-def JENKINS_WORKSPACE = 'C://Users/usuario/batch';
-//def NAME_PROJECT_JENKINS = 'comercial-app';
-//def NAME_JOB_JENKINS = 'comercial-backend';
-def APP_NAME = 'comercial';
-def ARCHIVO_BATCH = 'compiler-maven.bat'; 
-
-def cmd_exec(command) {
-    return bat(returnStdout: true, script: "${command}").trim()
-}
+#!groovy?  
+jboss-prod-host = 'localhost' 
+jboss-prod-admin-user = admin
+jboss-prod-admin-password = admin
+aplicacion-compiler = comercial.war
 
 node {
   
@@ -18,18 +13,27 @@ node {
 	   stage('Compilando con Maven')
 	   {
 	   
-	   dir(comercial) {
+	   dir('comercial') {
 			bat "mvn clean package -DskipTests"
 		}
-	     
-		  
-		println("compilando2")
+	      
+		println("compilado")
 	   }
 
 	   stage('Deployment en JBOSS') {	
-	   
-	   println("desplegando")
+	   dir('target') {
+		//bat "MOVE comercial.war ${JBOOS-SERVIDOR}"
+			
+		def jboss-undeploy = "java -jar jboss-cli-client.jar --connect --controller=localhost:9990 --user=admin --password=admin --command='undeploy comercial.war'"
+		bat jboss-undeploy                            
 						
-	 	
+		def jboss-deploy = "java -jar jboss-cli-client.jar --connect --controller=localhost:9990 --user=admin --password=admin --command='deploy ../../standalone/deployments/comercial.war --force'"
+		bat jboss-deploy   
+		 
+		  
+	   } 
+	     
+	   println("deplegado")
+		 
 	}
 }
