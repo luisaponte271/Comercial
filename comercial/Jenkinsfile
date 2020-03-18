@@ -24,9 +24,9 @@ node {
 	   stage('Deployment en JBOSS') {	
 	    dir('target') { 
 			
-			dir('cd C:/Users/usuario/Desktop/Luis Aponte/Servidores/bin/client/'){ 
-					println("ruta");
-					bat "chdir";
+			 bat 'cd C:/Users/usuario/Desktop/Luis Aponte/Servidores/bin/client/' 
+			 println("ruta");
+			 bat "chdir";
 			}
 			 
 		
