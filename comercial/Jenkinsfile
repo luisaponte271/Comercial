@@ -18,8 +18,10 @@ node {
 	   stage('Compilando con Maven')
 	   {
 	     
-		bat "cd ${JENKINS_WORKSPACE}/${APP_NAME}"
-		bat "call ${ARCHIVO_BATCH}"
+		//bat "cd ${JENKINS_WORKSPACE}/${APP_NAME}"
+		bat "comercial"
+		bat "mvn clean package -DskipTests"
+		//bat "call ${ARCHIVO_BATCH}"
 		
 		println("compilando")
 	   }
