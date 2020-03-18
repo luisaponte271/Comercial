@@ -18,13 +18,13 @@ node {
 	   stage('Compilando con Maven')
 	   {
 	     
-		cmd_exec('cd ${JENKINS_WORKSPACE}/${APP_NAME}')
-		cmd_exec('call ${ARCHIVO_BATCH}')
+		bat "cd ${JENKINS_WORKSPACE}/${APP_NAME}"
+		bat "call ${ARCHIVO_BATCH}"
 		
 		println("compilando")
 	   }
 
-	   stage('Deployment en JBOSS') {
+	   stage('Deployment en JBOSS') {	
 	   
 	   println("desplegando")
 						
