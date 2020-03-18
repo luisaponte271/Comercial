@@ -1,7 +1,7 @@
 #!groovy? 
-def NAME_PROJECT_JENKINS = '\comercial-app';
-def NAME_JOB_JENKINS = '\comercial-backend';
-def NAME_APP = '\comercial';
+def NAME_PROJECT_JENKINS = "\comercial-app";
+def NAME_JOB_JENKINS = "\comercial-backend";
+def NAME_APP = "\comercial";
 
 
 node {
