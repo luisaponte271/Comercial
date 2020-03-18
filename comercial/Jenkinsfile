@@ -1,12 +1,12 @@
 #!groovy? 
-pipeline {
+node {
     //agent any
     triggers { pollSCM('* * * * *') }
     stages {
  
-				/* stage('Descargar Fuentes') { 
+				 	stage('Descargar Fuentes') { 
 					  checkout scm
-				   }   */    
+				   }     
 				  
 				   stage('Compilando con Maven')
 				   {
