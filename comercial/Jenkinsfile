@@ -23,11 +23,11 @@ node {
 
 	   stage('Deployment en JBOSS') {	
 	    dir('target') { 
-		 bat "java -jar ${jboss-prod-ruta}jboss-cli-client.jar --connect --controller=${jboss_prod_host} --user=${jboss_prod_admin_user} --password=${jboss_prod_admin_password} --command='undeploy comercial.war'";
+		 bat "java -jar ${jboss_prod_ruta}jboss-cli-client.jar --connect --controller=${jboss_prod_host} --user=${jboss_prod_admin_user} --password=${jboss_prod_admin_password} --command='undeploy comercial.war'";
 		//def jboss-undeploy = " java -jar jboss-cli-client.jar --connect --controller=${jboss_prod_host} --user=${jboss_prod_admin_user} --password=${jboss_prod_admin_password} --command='undeploy comercial.war'";
 		//bat jboss-undeploy;
 				
-		bat "java -jar ${jboss-prod-ruta}jboss-cli-client.jar --connect --controller=${jboss_prod_host} --user=${jboss_prod_admin_user} --password=${jboss_prod_admin_password} --command='deploy ../../standalone/deployments/comercial.war --force'";
+		bat "java -jar ${jboss_prod_ruta}jboss-cli-client.jar --connect --controller=${jboss_prod_host} --user=${jboss_prod_admin_user} --password=${jboss_prod_admin_password} --command='deploy ../../standalone/deployments/comercial.war --force'";
 		//def jboss-deploy = " java -jar jboss-cli-client.jar --connect --controller=${jboss_prod_host} --user=${jboss_prod_admin_user} --password=${jboss_prod_admin_password} --command='deploy ../../standalone/deployments/comercial.war --force'";
 		//bat jboss-deploy;
 		 
