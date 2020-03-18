@@ -8,8 +8,9 @@ node {
 	  
 	   stage('Compilando con Maven')
 	   {
-		bat "chdir"
-		println("ubicaciòn actual")
+		def prueba = bat "chdir"
+		println("esto es una prueba")
+		println(prueba)
 		
 		println("compilando")
 	   }
