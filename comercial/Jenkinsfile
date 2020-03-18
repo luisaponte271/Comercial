@@ -6,53 +6,13 @@
 				  
 				   stage('Compilando con maven')
 				   {
-						//def mvnHome = tool 'jenkinsmvn';
-						//sh "${mvnHome}/bin/mvn -Pentorno-desarrollo clean package"   
-						//bat "mvn clean package"
-						
-						sh "mvn clean package"  
+					println("compilando")
 				   }
 
 				   stage('Deployment en JBOSS') {
-
-		  /*	  steps{
-				script{
-					def rutaWAR = "comercial/target/comercial.war" 
-					print rutaWAR
-				for(String item : rutaWAR){
-						withCredentials(
-							[usernamePassword
-								(	
-									credentialsId: 'jboss-desa_admin',
-									passwordVariable: 'JBOSS_DESA_ADMIN_PASSWORD',
-									usernameVariable: 'JBOSS_DESA_ADMIN_USER'
-								)
-							]
-						){
-							int p = item.lastIndexOf("/");
-							String nombreWAR = item.substring(p+1);
-							print nombreWAR;
-							def comandoWildFlyUndeploy = "java -jar ${JENKINS_HOME}/jboss-cli-client.jar --controller=${JBOSS_DESA_HOST} --connect --user=${JBOSS_DESA_ADMIN_USER} --password=${JBOSS_DESA_ADMIN_PASSWORD} 'undeploy " + nombreWAR + " --all-relevant-server-groups'|| true";
-							print comandoWildFlyUndeploy;
-							print '-- Inicio de ejecucion de comandoJBOSSUndeploy--';
-							print  nombreWAR;
-							sh comandoWildFlyUndeploy;
-							print  '';
-							print '--- Fin de ejecucion de comandoJBOSSUndeploy ---';
-							def comandoWildFlyDeploy = "java -jar ${JENKINS_HOME}/jboss-cli-client.jar --controller=${JBOSS_DESA_HOST} --connect --user=${JBOSS_DESA_ADMIN_USER} --password=${JBOSS_DESA_ADMIN_PASSWORD} 'deploy " + item + " --server-groups=sura-cluster-group-desarrollo-01'";
-							print comandoWildFlyDeploy;
-							print '--Inicio de ejecucion de comandoJBOSSDeploy- -';
-							print  nombreWAR;
-							sh comandoWildFlyDeploy;
-							print  '';
-							print '---Fin de ejecucion de comandoJBOSSDeploy ---';
-						}
-					}
-					def comandoWildFlyUndeploy = ""
-					//sh comandoWildFlyDeploy;
-					
-				}
-			} */	  
+				   
+				   println("desplegando")
+						
 		}	
 					
 }
