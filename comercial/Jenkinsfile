@@ -8,8 +8,8 @@ node {
 	  
 	   stage('Compilando con Maven')
 	   {
-		bat "javac -version"
-		println("version java")
+		bat "chdir"
+		println("ubicaciòn actual")
 		
 		println("compilando")
 	   }
