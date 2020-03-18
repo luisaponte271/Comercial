@@ -1,8 +1,8 @@
 #!groovy? 
-//def NAME_PROJECT_JENKINS = 'comercial-app';
-//def NAME_JOB_JENKINS = 'comercial-backend';
-//def NAME_APP = 'comercial';
-String NAME = 'comercial-app\\comercial-backend\\comercial';
+def NAME_PROJECT_JENKINS = 'comercial-app';
+def NAME_JOB_JENKINS = 'comercial-backend';
+def NAME_APP = 'comercial';
+//String NAME = 'comercial-app\\comercial-backend\\comercial';
 
 node {
   
@@ -13,8 +13,8 @@ node {
 	   stage('Compilando con Maven')
 	   {
 	    
-		//bat "%JENKINS_WORKSPACE%\\${NAME_PROJECT_JENKINS}\\${NAME_JOB_JENKINS}\\${NAME_APP}" 
-		bat "%JENKINS_WORKSPACE%\\${NAME}" 
+		bat "cd %JENKINS_WORKSPACE%\\${NAME_PROJECT_JENKINS}\\${NAME_JOB_JENKINS}\\${NAME_APP}" 
+		//bat "%JENKINS_WORKSPACE%\\${NAME}" 
 		//bat "mvn clean package -DskipTests"
 		
 		println("compilando")
