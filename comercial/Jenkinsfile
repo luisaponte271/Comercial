@@ -1,4 +1,5 @@
 #!groovy? 
+def JENKINS_WORKSPACE = 'C:\Users\usuario\.jenkins\workspace';
 def NAME_PROJECT_JENKINS = 'comercial-app';
 def NAME_JOB_JENKINS = 'comercial-backend';
 def NAME_APP = 'comercial';
@@ -13,7 +14,7 @@ node {
 	   stage('Compilando con Maven')
 	   {
 	    
-		bat "cd %JENKINS_WORKSPACE%\\${NAME_PROJECT_JENKINS}\\${NAME_JOB_JENKINS}\\${NAME_APP}" 
+		bat "cd ${JENKINS_WORKSPACE}\\${NAME_PROJECT_JENKINS}\\${NAME_JOB_JENKINS}\\${NAME_APP}" 
 		//bat "%JENKINS_WORKSPACE%\\${NAME}" 
 		//bat "mvn clean package -DskipTests"
 		
