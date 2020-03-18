@@ -1,5 +1,7 @@
 #!groovy? 
  node{
+ 				 triggers { pollSCM('* * * * *') }
+ 				
 				 stage('Descargar Fuentes') { 
 					  checkout scm
 				   }     
