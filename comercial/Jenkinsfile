@@ -24,7 +24,7 @@ node {
 
 	   stage('Deployment en JBOSS') {	 
 		
-		 bat '''call ${jboss_batch_desplegar}desplegar-comercial-servidor.bat'''
+		 bat "call ${jboss_batch_desplegar}desplegar-comercial-servidor.bat"
 			   
 	   } 
 	     
