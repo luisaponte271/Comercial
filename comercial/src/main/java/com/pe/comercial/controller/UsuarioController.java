@@ -42,7 +42,7 @@ public class UsuarioController {
 //		return ResponseEntity.ok(result);
 //	}
     
-    @GetMapping(value = "/listarJpa2")
+    @GetMapping(value = "/listarJpa")
 	public ResponseEntity<Object> obtenerListaUsuarioJpa() { 
 		 
 		result.put("data", usuariosService.obtenerlistaJpa());
